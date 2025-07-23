@@ -15,7 +15,9 @@ extension View {
     func background(backgroundColor: Color, overlayColor: Color, corners: [PopupAlignment: CGFloat]) -> some View {
         background(backgroundColor)
             .overlay(overlayColor)
-            .mask(RoundedCorner(corners: corners))
+            .mask(
+                RoundedRectangle(cornerRadius: 32, style: .continuous)
+            )
     }
 }
 
