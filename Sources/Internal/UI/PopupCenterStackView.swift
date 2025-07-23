@@ -35,7 +35,7 @@ private extension PopupCenterStackView {
             .onHeightChange { await viewModel.updatePopupHeight($0, popup) }
             .frame(height: viewModel.activePopupProperties.height)
             .frame(maxWidth: .infinity, maxHeight: viewModel.activePopupProperties.height)
-            .background(backgroundColor: getBackgroundColor(for: popup), overlayColor: .clear, corners: viewModel.activePopupProperties.corners)
+            .background(backgroundColor: getBackgroundColor(for: popup), overlayColor: .clear, cornerRadius: viewModel.activePopupProperties.cornerRadius)
             .opacity(viewModel.calculateOpacity(for: popup))
             .focusSection_tvOS()
             .padding(viewModel.activePopupProperties.outerPadding)

@@ -11,12 +11,14 @@
 
 import SwiftUI
 
+
+
 extension View {
-    func background(backgroundColor: Color, overlayColor: Color, corners: [PopupAlignment: CGFloat]) -> some View {
+    func background(backgroundColor: Color, overlayColor: Color, cornerRadius:CGFloat) -> some View {
         background(backgroundColor)
             .overlay(overlayColor)
             .mask(
-                RoundedRectangle(cornerRadius: 32, style: .continuous)
+                RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
             )
     }
 }

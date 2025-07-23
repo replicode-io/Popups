@@ -28,7 +28,6 @@ enum VM {}
     func calculateActivePopupHeight() async -> CGFloat?
     func calculateActivePopupOuterPadding() async -> EdgeInsets
     func calculateActivePopupInnerPadding() async -> EdgeInsets
-    func calculateActivePopupCorners() async -> [PopupAlignment: CGFloat]
     func calculateActivePopupVerticalFixedSize() async -> Bool
     func calculateActivePopupTranslationProgress() async -> CGFloat
     func calculatePopupHeight(_ heightCandidate: CGFloat, _ popup: AnyPopup) async -> CGFloat
@@ -121,7 +120,7 @@ private extension ViewModel {
         activePopupProperties.height = await calculateActivePopupHeight()
         activePopupProperties.outerPadding = await calculateActivePopupOuterPadding()
         activePopupProperties.innerPadding = await calculateActivePopupInnerPadding()
-        activePopupProperties.corners = await calculateActivePopupCorners()
+        activePopupProperties.cornerRadius = 32
         activePopupProperties.verticalFixedSize = await calculateActivePopupVerticalFixedSize()
     }
     func updateActivePopupPropertiesOnGestureTranslationChange(_ newGestureTranslation: CGFloat) async {
